@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: examples.ExamplesTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 5.678 s <<< FAILURE! - in examples.ExamplesTest
+testAll[1][1]  Time elapsed: 2.126 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+status code was: 404, expected: 200, response time in milliseconds: 443, url: https://reqres.in/api/default/users%3Fpage=2, response: 
+{}
+classpath:examples/users/ConfigDemo1.feature:9
+
+testAll[2][3]  Time elapsed: 0.368 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+did not evaluate to 'true': response.data.lenght == 6
+classpath:examples/users/Get.feature:25
+
+testAll[3][4]  Time elapsed: 0.362 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+match failed: EQUALS
+  $ | not equal | match failed for name: 'job' (MAP:MAP)
+  {"name":"Suleyman","job":"engineer","id":"890","createdAt":"2023-02-12T13:19:51.424Z"}
+  {"name":"Suleyman","job":"Baba","id":"#string","createdAt":"#ignore"}
+
+    $.job | not equal (STRING:STRING)
+    'engineer'
+    'Baba'
+
+classpath:examples/users/Post.feature:41
+
